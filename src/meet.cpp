@@ -158,7 +158,7 @@ void Meet_door_chapter_2_game_easter_eggs() {
 }
 void Meet_door_chapter_2_game_easter_eggs_to_library() {
 	if (Object_controlled_y >= 720 && Object_controlled_x <= 685 && Object_controlled_x >= 540) {
-		mciSendString("close ./res/Audios/学姐生日歌.mp3", 0, 0, 0);
+		mciSendString("close ./resource/Audios/学姐生日歌.mp3", 0, 0, 0);
 		Meet_door_to_next_page();
 	}
 	return;

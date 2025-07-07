@@ -70,7 +70,7 @@ void Draw_page() {
 		Draw_page_background();							//画出对应页面背景
 		IMAGE end_credit;
 		Bgm_end_credit();
-		loadimage(&end_credit, _T("./res/Images/end/end.png"));
+		loadimage(&end_credit, _T("./resource/Images/end/end.png"));
 		putimage(0, End_credit_y, &end_credit);
 		End_credit_y -= 3;
 		//Sleep(5000);
@@ -367,7 +367,7 @@ void Draw_object_mobile() {
 					if (Player_blood_number <= 0) {					//如果血量低于0，懒得做重新开始游戏了，就直接触发学姐的祝福，开始播放生日快乐的语音
 						Player_blood_number = 1;
 						Player_blood_rectangle = 8;
-						mciSendString("play ./res/Audios/学姐生日歌.mp3 repeat", NULL, NULL, NULL);
+						mciSendString("play ./resource/Audios/学姐生日歌.mp3 repeat", NULL, NULL, NULL);
 					}
 					break;
 				}
@@ -464,14 +464,14 @@ void Draw_player() {
 	switch (Player_direction)
 	{
 	case 1:
-		loadimage(&img_player_left, _T("./res/Images/tupian/八戒左.png"));
-		loadimage(&img_player_left, _T("./res/Images/tupian/八戒左.png"));
+		loadimage(&img_player_left, _T("./resource/Images/tupian/八戒左.png"));
+		loadimage(&img_player_left, _T("./resource/Images/tupian/八戒左.png"));
 		putimage(Player_x, Player_y, PEOPLE_WIDTH, PEOPLE_HEIGHT, &img_player_left, (Gif_n % 8) * PEOPLE_WIDTH, 0, SRCAND);
 		putimage(Player_x, Player_y, PEOPLE_WIDTH, PEOPLE_HEIGHT, &img_player_left, (Gif_n % 8) * PEOPLE_WIDTH, PEOPLE_HEIGHT, SRCPAINT);
 		break;
 	case 0:
-		loadimage(&img_player_right, _T("./res/Images/tupian/八戒右.png"));
-		loadimage(&img_player_right, _T("./res/Images/tupian/八戒右.png"));
+		loadimage(&img_player_right, _T("./resource/Images/tupian/八戒右.png"));
+		loadimage(&img_player_right, _T("./resource/Images/tupian/八戒右.png"));
 		putimage(Player_x, Player_y, PEOPLE_WIDTH, PEOPLE_HEIGHT, &img_player_right, (Gif_n % 8) * PEOPLE_WIDTH, 0, SRCAND);
 		putimage(Player_x, Player_y, PEOPLE_WIDTH, PEOPLE_HEIGHT, &img_player_right, (Gif_n % 8) * PEOPLE_WIDTH, PEOPLE_HEIGHT, SRCPAINT);
 		break;
@@ -548,8 +548,8 @@ void Draw_each_bullet() {
 	for (int i = 0; i < Bullet_amount; i++) {
 		if (Player_bullet[i].live) {
 			IMAGE img1, img2;
-			loadimage(&img1, _T("./res/Images/object_mobile/big_coin_1.png"), 60, 60);
-			loadimage(&img2, _T("./res/Images/object_mobile/big_coin_2.png"), 60, 60);
+			loadimage(&img1, _T("./resource/Images/object_mobile/big_coin_1.png"), 60, 60);
+			loadimage(&img2, _T("./resource/Images/object_mobile/big_coin_2.png"), 60, 60);
 			putimage(Player_bullet[i].current_x, Player_bullet[i].current_y, &img1, SRCAND);
 			putimage(Player_bullet[i].current_x, Player_bullet[i].current_y, &img2, SRCPAINT);
 		}
@@ -632,8 +632,8 @@ void Hit_BOSS_bullet() {
 void Draw_door_to_essay() {
 	if (Signal_exist_boss == 0) {
 		IMAGE door1, door2;
-		loadimage(&door1, "./res/Images/tupian/transfer_gate.png");
-		loadimage(&door2, "./res/Images/tupian/transfer_gate.png");
+		loadimage(&door1, "./resource/Images/tupian/transfer_gate.png");
+		loadimage(&door2, "./resource/Images/tupian/transfer_gate.png");
 		putimage(100, 580, PEOPLE_WIDTH, PEOPLE_HEIGHT, &door1, (Gif_n % 8) * PEOPLE_WIDTH, 0, SRCAND);
 		putimage(100, 580, PEOPLE_WIDTH, PEOPLE_HEIGHT, &door2, (Gif_n % 8) * PEOPLE_WIDTH, PEOPLE_HEIGHT, SRCPAINT);
 		if (Player_x <= 300 && Player_y >= 600) Meet_door_to_next_page();
