@@ -70,7 +70,7 @@ void Draw_page() {
 		Draw_page_background();							//画出对应页面背景
 		IMAGE end_credit;
 		Bgm_end_credit();
-		loadimage(&end_credit, _T("./resource/Images/end/end.png"));
+		loadimage(&end_credit, _T("./res/Images/end/end.png"));
 		putimage(0, End_credit_y, &end_credit);
 		End_credit_y -= 3;
 		//Sleep(5000);
@@ -367,7 +367,7 @@ void Draw_object_mobile() {
 					if (Player_blood_number <= 0) {					//如果血量低于0，懒得做重新开始游戏了，就直接触发学姐的祝福，开始播放生日快乐的语音
 						Player_blood_number = 1;
 						Player_blood_rectangle = 8;
-						mciSendString("play ./resource/Audios/学姐生日歌.mp3 repeat", NULL, NULL, NULL);
+						mciSendString("play ./res/Audios/学姐生日歌.mp3 repeat", NULL, NULL, NULL);
 					}
 					break;
 				}
@@ -464,14 +464,14 @@ void Draw_player() {
 	switch (Player_direction)
 	{
 	case 1:
-		loadimage(&img_player_left, _T("./resource/Images/tupian/八戒左.png"));
-		loadimage(&img_player_left, _T("./resource/Images/tupian/八戒左.png"));
+		loadimage(&img_player_left, _T("./res/Images/tupian/八戒左.png"));
+		loadimage(&img_player_left, _T("./res/Images/tupian/八戒左.png"));
 		putimage(Player_x, Player_y, PEOPLE_WIDTH, PEOPLE_HEIGHT, &img_player_left, (Gif_n % 8) * PEOPLE_WIDTH, 0, SRCAND);
 		putimage(Player_x, Player_y, PEOPLE_WIDTH, PEOPLE_HEIGHT, &img_player_left, (Gif_n % 8) * PEOPLE_WIDTH, PEOPLE_HEIGHT, SRCPAINT);
 		break;
 	case 0:
-		loadimage(&img_player_right, _T("./resource/Images/tupian/八戒右.png"));
-		loadimage(&img_player_right, _T("./resource/Images/tupian/八戒右.png"));
+		loadimage(&img_player_right, _T("./res/Images/tupian/八戒右.png"));
+		loadimage(&img_player_right, _T("./res/Images/tupian/八戒右.png"));
 		putimage(Player_x, Player_y, PEOPLE_WIDTH, PEOPLE_HEIGHT, &img_player_right, (Gif_n % 8) * PEOPLE_WIDTH, 0, SRCAND);
 		putimage(Player_x, Player_y, PEOPLE_WIDTH, PEOPLE_HEIGHT, &img_player_right, (Gif_n % 8) * PEOPLE_WIDTH, PEOPLE_HEIGHT, SRCPAINT);
 		break;
